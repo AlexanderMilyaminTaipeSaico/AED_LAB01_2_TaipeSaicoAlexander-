@@ -4,6 +4,8 @@
  */
 package actividad4;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Acer
@@ -27,24 +29,26 @@ public class CalculadoraPolacaInversaApp {
         
         //segun el codigo de operacion, haremos una u otra accion
         switch (operacion){
-            case "+";
+            case "+":
             resultado = operando1 + operando2;
             break;
-            case "-";
+            case "-":
             resultado = operando1 - operando2;
             break;
-            case "*";
+            case "*":
             resultado = operando1 * operando2;
-            case "/";
+            break;
+            case "/":
             resultado = operando1 / operando2;
-            case "^";
+            break;
+            case "^":
             resultado = (int)Math.pow(operando1, operando2);
             break;
-            case "%";
-            resultado = operando1 % opernado2;
+            case "%":
+            resultado = operando1 % operando2;
             break;
         }
-        
+        JOptionPane.showMessageDialog(null, operando1 +" "+operacion+" "+operando2+"="+resultado);
         }
     }
-}
+
