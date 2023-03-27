@@ -18,7 +18,7 @@ public class Fabrica {
     }
     
     public double[] porcInstrumentosPorTipo(String nombreSuc){
-        double[] porcentajes = null;
+        double[] porcentajes = new double[TipoInstrumento.values().length];
         Sucursal sucEncontrada = buscarSucursal(nombreSuc);
         if(sucEncontrada != null){
             porcentajes = sucEncontrada.porcInstrumentosPorTipo();

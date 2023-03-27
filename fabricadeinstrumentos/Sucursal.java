@@ -45,8 +45,15 @@ public class Sucursal {
         for(Instrumento instrumento : instrumentos){
             porcentajes[instrumento.getTipo().ordinal()]++; 
         }
+        absolutoAPorcentaje(porcentajes);
         return porcentajes;
         
+    }
+    
+    private void absolutoAPorcentaje(double[] porcentajes){
+        for (int i = 0; i < porcentajes.length; i++){
+            porcentajes[i] = porcentajes[i] * 100 / instrumentos.size();
+        }
     }
     
     public void agregarInstrumento(Instrumento ins){

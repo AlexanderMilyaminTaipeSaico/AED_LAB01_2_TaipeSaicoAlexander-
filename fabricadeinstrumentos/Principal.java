@@ -22,11 +22,15 @@ public class Principal {
         for (Instrumento instrumento : lista){
             System.out.println(instrumento);     
         }*/
-        Instrumento borrado = f.borrarInstrumento("ABV123");
+        /*Instrumento borrado = f.borrarInstrumento("ABV123");
         System.out.println("Se borro " + borrado);
-        f.listarInstrumentos();
+        f.listarInstrumentos();*/
         
-      
+       double[] porcs = f.porcInstrumentosPorTipo("Sucursal A");
+        
+       for(int i = 0; i < porcs.length; i++){
+           System.out.println(porcs[i]);
+       }
     }
     private static void cargarFabrica(Fabrica f){
         Sucursal s1 = new Sucursal("Sucursal A");
