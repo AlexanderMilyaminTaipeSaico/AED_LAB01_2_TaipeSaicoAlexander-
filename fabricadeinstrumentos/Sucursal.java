@@ -19,6 +19,36 @@ public class Sucursal {
         this.instrumentos = new ArrayList<>();
     }
     
+    public Instrumento borrarInstrumento(String ID){
+        Instrumento insABorrar = buscarInstrumento(ID);
+        this.instrumentos.remove(insABorrar);
+        return insABorrar;
+        //BuscarInstrumentoPorID
+        //Si existe borrarlo
+    }
+    
+    private Instrumento buscarInstrumento(String ID){
+        int i = 0;
+        Instrumento insEncontrado = null;
+        while(i < instrumentos.size() && !this.instrumentos.get(i).getID().equals(ID)){
+            i++;
+        }
+        if(i < instrumentos.size()){
+            insEncontrado = this.instrumentos.get(i);
+        }
+        return insEncontrado;
+    }
+    
+    public double[] porcInstrumentosPorTipo(){
+        final int CANT_INSTRUMENTOS = TipoInstrumento.values().length;
+        double[] porcentajes = new double[CANT_INSTRUMENTOS];
+        for(Instrumento instrumento : instrumentos){
+            porcentajes[instrumento.getTipo().ordinal()]++; 
+        }
+        return porcentajes;
+        
+    }
+    
     public void agregarInstrumento(Instrumento ins){
         this.instrumentos.add(ins);
     }

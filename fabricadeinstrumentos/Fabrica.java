@@ -17,6 +17,27 @@ public class Fabrica {
         this.sucursales = new ArrayList<>();
     }
     
+    public double[] porcInstrumentosPorTipo(String nombreSuc){
+        double[] porcentajes = null;
+        Sucursal sucEncontrada = buscarSucursal(nombreSuc);
+        if(sucEncontrada != null){
+            porcentajes = sucEncontrada.porcInstrumentosPorTipo();
+        }
+        return porcentajes;
+    }
+    
+    private Sucursal buscarSucursal(String nombreSuc){
+        int i = 0;
+        Sucursal sucEncontrada = null;
+        while(i < sucursales.size() && !this.sucursales.get(i).getNombre().equals(nombreSuc)){
+            i++;
+        }
+        if(i < sucursales.size()){
+            sucEncontrada = this.sucursales.get(i);
+        }
+        return sucEncontrada;
+    }
+    
     public Instrumento borrarInstrumento(String ID){
         Instrumento borrado = null;
         int i = 0;

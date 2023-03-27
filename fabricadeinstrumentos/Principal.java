@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -17,10 +18,15 @@ public class Principal {
         cargarFabrica(f);
         
         //f.listarInstrumentos();
-        ArrayList<Instrumento> lista = f.instrumentosPorTipo(TipoInstrumento.CUERDA);
+        /*ArrayList<Instrumento> lista = f.instrumentosPorTipo(TipoInstrumento.CUERDA);
         for (Instrumento instrumento : lista){
             System.out.println(instrumento);     
-        }
+        }*/
+        Instrumento borrado = f.borrarInstrumento("ABV123");
+        System.out.println("Se borro " + borrado);
+        f.listarInstrumentos();
+        
+      
     }
     private static void cargarFabrica(Fabrica f){
         Sucursal s1 = new Sucursal("Sucursal A");
@@ -34,6 +40,6 @@ public class Principal {
         s2.agregarInstrumento(new Instrumento("VXCBE2", 45645, TipoInstrumento.VIENTO));
         
         f.agregarSucursal(s1);
-        f.agregarSucursal(s2);
+        f.agregarSucursal(s2); 
     }
 }

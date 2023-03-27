@@ -23,6 +23,11 @@ public class Instrumento {
         return tipo;
     }
 
+    public String getID() {
+        return ID;
+    }
+    
+
     @Override
     public String toString() {
         return "Instrumento{" + "ID=" + ID + ", precion=" + precios + ", tipo=" + tipo + '}';
